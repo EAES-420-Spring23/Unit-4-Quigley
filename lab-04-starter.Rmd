@@ -1,13 +1,13 @@
 ---
 title: "Lab 04 - Data Type Coercion"
-author: "Insert your name here"
-date: "Insert date here"
-output: html_document
+author: "Louis Quigley"
+date: "3/7/23"
+output: pdf_document
 ---
 
 ### Load packages and data
 
-```{r load-packages message = FALSE}
+```{r load-packages, message = FALSE}
 library(tidyverse)
 library(openintro)
 ```
@@ -16,8 +16,22 @@ library(openintro)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
-
+```{r echo = F}
+1
+1L
+"C"
+```
+1 is a `r typeof(1)`.
+1L is an `r typeof(1L)`.
+"C" is a `r typeof("C")`.
+```{r echo = F}
+c(1, 1L, "C")
+```
+The second code chunk is a vector and is displayed as variables in a row
+```{r echo = F}
+typeof(c(1, 1L, "C"))
+```
+The vector has to be of the same type and the numbers are interpreted as characters, because "C" cannot be expressed an a numerical. 
 ### Exercise 2
 
 Remove this text, and add your answer for Exercise 2 here.
