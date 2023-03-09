@@ -109,8 +109,16 @@ the year, day, and deaths variables can be coerced from doubles into integers wi
 
 ### Exercise 9
 
-Remove this text, and add your answer for Exercise 9 here.
+The years would be not be ordered chronologically on the graph. 
 
 ### Exercise 10
 
-Remove this text, and add your answer for Exercise 9 here.
+```{r label-me, eval = T}
+earthquakes %>% 
+  mutate(major = case_when(
+    richter > 7.5 ~ TRUE,
+    TRUE ~ FALSE
+  )) %>% 
+  mutate(major = as.numeric(major)) %>% 
+  filter(major == 1)
+```
