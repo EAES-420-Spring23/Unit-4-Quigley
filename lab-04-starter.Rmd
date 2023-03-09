@@ -63,26 +63,49 @@ This vector contains both numerical and logical data types. Because there is a n
 TRUE
 as.numeric(TRUE)
 ```
-TRUE is of type `r typeof(TRUE)`, but as.numeric specifies that "TRUE" is to be a `r typeof(as.numeric(true))`.  
+TRUE is of type `r typeof(TRUE)`, but as.numeric specifies that "TRUE" is to be a `r typeof(as.numeric(TRUE))`.  
 ```{r echo = F}
 typeof(c(TRUE, as.numeric(TRUE)))
 ```
 Since as.numeric(TRUE) specifies that it should be read as a numeric, all species in the vector must be treated as numerics and in this case as doubles. 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
-
+```{r echo = F}
+NA
+FALSE
+as.logical(1)
+```
+All data dypes are `r typeof(NA)`. as.logical(1) turns into TRUE, which is a logical type, because TRUE is defined numerically as "1".
+```{r echo = F}
+typeof(c(NA, FALSE, as.logical(1)))
+```
+In the vector, all data types are `r typeof(as.logical(1))`, therefore the whole vector is of type `r typeof(NA)`.  
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
-
+```{r echo = F}
+1L
+0
+1L / 0
+"A"
+```
+1L is of type `r typeof(1L)`.  
+0 is of `r typeof(0)`.  
+In 1L/0, the 1L is type `r typeof(1L)`, but the 0 is type `r typeof(0)`. Together 1L/0 is of type `r typeof(1L/0)`.  
+"A" is of type `r typeof("A")`.  
+```{r echo = F}
+typeof(c(1L / 0, "A"))
+```
+The data type is `r typeof(c(1L/0, "A"))`, because even though 1L/0 is of data type (`r typeof(1L/0)`, "A" is of data type `r typeof("A")`, which R must then interpret the whole vector as type `r typeof("A")`.  
 ### Exercise 7
 
-Remove this text, and add your answer for Exercise 7 here.
+```{r}
+glimpse(earthquakes)
+```
+
 
 ### Exercise 8
 
-Remove this text, and add your answer for Exercise 8 here.
+the year, day, and deaths variables can be coerced from doubles into integers without losing information. 
 
 ### Exercise 9
 
