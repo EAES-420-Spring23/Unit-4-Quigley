@@ -65,8 +65,54 @@ earthquakes %>%
 The "month" variable is being ordered alphabetically. This creates a graph that is out of chronological order. 
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
-
+```{r earthquakes-forcats-1}
+earthquakes %>% 
+  ggplot(aes(x = fct_infreq(month))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+The fct_infreq function orders the "months" variable in descending order based on its frequency of levels.  
+```{r earthquakes-forcats-2}
+earthquakes %>% 
+  ggplot(aes(x = fct_rev(month))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+The fct_rev function orders the variable "month" in reverse order of its level (alphabetical order).  
+```{r earthquakes-forcats-3}
+earthquakes %>% 
+  ggplot(aes(x = fct_inorder(month))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+the fct_inorder function gives the variable "month" in the original order they appear in the data. 
+```{r earthquakes-forcats-4}
+earthquakes %>% 
+  ggplot(aes(x = month %>% fct_infreq() %>% fct_rev())) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+The fct_infreq function orders the variable "month" by the less frequent level. 
+```{r earthquakes-forcats-5}
+earthquakes %>% 
+  mutate(month = fct_recode(month,
+                            "1" = "January",
+                            "2" = "February",
+                            "3" = "March",
+                            "4" = "April",
+                            "5" = "May",
+                            "6" = "June",
+                            "7" = "July",
+                            "8" = "August",
+                            "9" = "September",
+                            "10" = "October",
+                            "11" = "November",
+                            "12" = "December")) %>% 
+  ggplot(aes(x = factor(as.numeric(month)))) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+The fct_recode function is remapping the months to numeric values so they are arranged in chronological order on the graph. 
 ### Exercise 7
 
 Remove this text, and add your answer for Exercise 7 here.
