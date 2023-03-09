@@ -105,11 +105,12 @@ glimpse(earthquakes)
 
 ### Exercise 8
 
-the year, day, and deaths variables can be coerced from doubles into integers without losing information. 
+the year, day, and deaths variables can be coerced from doubles into integers without losing information, because year, day, and deaths are expressed as whole numbers and the value does not change between the types "double" or "integer."
 
 ### Exercise 9
 
-The years would be not be ordered chronologically on the graph. 
+as.character(1902) would take away the order of the years, which would make
+the years not be ordered chronologically on the graph. 
 
 ### Exercise 10
 

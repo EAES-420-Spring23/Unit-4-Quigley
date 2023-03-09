@@ -26,7 +26,10 @@ mixed <- c(27, "700c", "650b", 26, 20)
 ```
 ### Exercise 2
 
-Remove this text, and add your answer for Exercise 2 here.
+```{r label-me1 , eval = F}
+data_frame <- bind_cols("numeric" = numeric, "character" = character, "mixed" = mixed)
+___
+```
 
 ### Exercise 3
 
