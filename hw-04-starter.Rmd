@@ -1,8 +1,8 @@
 ---
 title: "Homework 04 - Data Classes w. forcats & lubridate"
-author: "Insert your name here"
-date: "Insert date here"
-output: html_document
+author: "Louis Quigley"
+date: "3/9/23"
+output: pdf_document
 ---
 
 ### Load packages and data
@@ -16,9 +16,14 @@ library(lubridate)
 ## Exercises
 
 ### Exercise 1
-
-Remove this text, and add your answer for Exercise 1 here.
-
+```{r}
+#frame_size_cm 
+numeric <- c(52,54,56,58,60)
+#bike_attachments 
+character <- c("grips", "lights", "rack", "fenders", "bell")
+#wheel_size
+mixed <- c(27, "700c", "650b", 26, 20)
+```
 ### Exercise 2
 
 Remove this text, and add your answer for Exercise 2 here.
