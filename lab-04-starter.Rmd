@@ -2,7 +2,7 @@
 title: "Lab 04 - Data Type Coercion"
 author: "Louis Quigley"
 date: "3/7/23"
-output: pdf_document
+output: html_document
 ---
 
 ### Load packages and data
