@@ -28,21 +28,41 @@ mixed <- c(27, "700c", "650b", 26, 20)
 
 ```{r label-me1 , eval = F}
 data_frame <- bind_cols("numeric" = numeric, "character" = character, "mixed" = mixed)
-___
+data_frame
 ```
-
+the data frame is a `r typeof(data_frame)` and a `r class(data_frame)`.  
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+```{r fake-dataframe, eval = F}
+#frame_size_cm 
+numeric <- c(52,54,56,58,60)
+#bike_attachments 
+character <- c("grips", "lights", "rack", "fenders", "bell")
+#wheel_size
+mixed <- c(27, "700c", "650b", 26)
+```
 
+```{r label-me1 , eval = F}
+data_frame <- bind_cols("numeric" = numeric, "character" = character, "mixed" = mixed)
+data_frame
+```
+Data frames must have the same number of observations in each variable. Since the mixed frame only has four variables, r is not able to bind the observations into a colmn. 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
-
+```{r label-me2, eval = F}
+my_list <- list("numeric" = numeric, "character" = character, "mixed" = mixed)
+my_list
+```
+Lists can have a different number of observations per column, unlike data frames. 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
-
+```{r earthquakes-factors}
+earthquakes %>% 
+  ggplot(aes(x = month)) +
+  geom_bar() +
+  labs(x = "Month of the year", y = "Earthquake count")
+```
+The "month" variable is being ordered alphabetically. This creates a graph that is out of chronological order. 
 ### Exercise 6
 
 Remove this text, and add your answer for Exercise 6 here.
