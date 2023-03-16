@@ -126,16 +126,24 @@ the mutate() function is creating a new variable "data" by combining year, month
 ### Exercise 8
 
 ```{r earthquake-1993}
-earthquakes_new <- earthquakes %>%
+earthquakes_new %>%
   filter(year == 1933) %>%
   ggplot(aes(date, richter)) +
-geom_point()
+  geom_point()
 ```
-
-
+The dates are out of chronological order! They appear on the graph in the inverse order that they are listed in the tibble. 
 ### Exercise 9
 
-Remove this text, and add your answer for Exercise 9 here.
+```{r earthquakes-dates2, eval = T}
+library(lubridate)
+
+earthquakes %>%
+  mutate(date = ymd(glue("{year}-{month}-{day}"))) %>%
+  relocate(date) %>%
+  ggplot(aes(date, richter)) +
+  geom_point()
+```
+the ymd() function converts the dates from characters into the class date in a "year, month, day" format. 
 
 ### Exercise 10
 
