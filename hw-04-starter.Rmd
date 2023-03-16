@@ -144,7 +144,3 @@ earthquakes %>%
   geom_point()
 ```
 the ymd() function converts the dates from characters into the class date in a "year, month, day" format. 
-
-### Exercise 10
-
-Remove this text, and add your answer for Exercise 10 here.
