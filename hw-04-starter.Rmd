@@ -11,12 +11,13 @@ output: pdf_document
 library(tidyverse)
 library(openintro) 
 library(lubridate)
+library(glue)
 ```
 
 ## Exercises
 
 ### Exercise 1
-```{r}
+```{r label-variables, eval = F}
 #frame_size_cm 
 numeric <- c(52,54,56,58,60)
 #bike_attachments 
