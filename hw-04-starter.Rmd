@@ -43,7 +43,7 @@ character <- c("grips", "lights", "rack", "fenders", "bell")
 mixed <- c(27, "700c", "650b", 26)
 ```
 
-```{r label-me1 , eval = F}
+```{r label-me2 , eval = F}
 data_frame <- bind_cols("numeric" = numeric, "character" = character, "mixed" = mixed)
 data_frame
 ```
@@ -116,11 +116,22 @@ earthquakes %>%
 The fct_recode function is remapping the months to numeric values so they are arranged in chronological order on the graph. 
 ### Exercise 7
 
-Remove this text, and add your answer for Exercise 7 here.
-
+```{r earthquake-dates}
+earthquakes_new <- earthquakes %>% 
+  mutate(date = glue("{year} {month} {day}")) %>% 
+  relocate(date)
+print(earthquakes_new)
+```
+the mutate() function is creating a new variable "data" by combining year, month, and day, variables. The relocate() function is moves blocks of columns at once. 
 ### Exercise 8
 
-Remove this text, and add your answer for Exercise 8 here.
+```{r earthquake-1993}
+earthquakes_new <- earthquakes %>%
+  filter(year == 1933) %>%
+  ggplot(aes(date, richter)) +
+geom_point()
+```
+
 
 ### Exercise 9
 
