@@ -112,7 +112,7 @@ the year, day, and deaths variables can be coerced from doubles into integers wi
 as.character(1902) would take away the order of the years, which would make
 the years not be ordered chronologically on the graph. 
 
-### Exercise 10
+### Exercise 10 -.5
 
 ```{r label-me, eval = T}
 earthquakes %>% 
