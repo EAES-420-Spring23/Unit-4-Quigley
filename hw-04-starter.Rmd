@@ -16,7 +16,7 @@ library(glue)
 
 ## Exercises
 
-### Exercise 1
+### Exercise 1-.5
 ```{r label-variables, eval = F}
 #frame_size_cm 
 numeric <- c(52,54,56,58,60)
@@ -114,7 +114,7 @@ earthquakes %>%
   labs(x = "Month of the year", y = "Earthquake count")
 ```
 The fct_recode function is remapping the months to numeric values so they are arranged in chronological order on the graph. 
-### Exercise 7
+### Exercise 7 -.5
 
 ```{r earthquake-dates}
 earthquakes_new <- earthquakes %>% 
